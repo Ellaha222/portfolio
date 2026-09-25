@@ -44,10 +44,11 @@ ul li a {
     text-decoration: none;
     color: #444;
     padding: 1em;
+    transition: color 0.3s, text-decoration 0.3s;
 }
 
 ul li a:hover {
-    font-weight: 400;
+    color: #6a3dad;
      text-decoration: underline;
 }
 
@@ -106,6 +107,18 @@ ul li a:hover {
     background-color: white;
     padding: 25px;
     border-radius: 10px;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.project-container article img{
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.project-container article img:hover{
+    transform: scale(1.05);
 }
 
 .project-container article h3{
@@ -121,11 +134,26 @@ ul li a:hover {
     text-decoration: underline;
     color: #6a3dad;
     font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s, transform 0,3s;
+    margin-top: auto;
 }
 
 .project-container article a:hover{
-    text-decoration: none;
+    background-color: #6a3dad;
+    color: white;
+    transform: scale(1);
 }
+
+.project-container article:hover{
+    transform: translateY(-10px);
+}
+
+.project-container article a:active{
+    transform: scale(0.95);
+}
+
+
 
 #skills{
     width: 90%;
@@ -182,10 +210,11 @@ ul li a:hover {
     padding: 10px 20px;
     border-radius: 8px;
     font-weight: bold;
+    transition: transform 0.3s;
 }
 
 #contact li a:hover{
-    text-decoration: underline;
+   transform: rotate(10deg);
 }
 
 footer{
@@ -220,4 +249,11 @@ footer{
     nav ul{
         justify-content: center;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+*{
+    transition: none !important;
+    transform: none !important;
+}
 }
